@@ -1,0 +1,47 @@
+{% extends 'skillaqui/base.html' %}
+{% load static %}
+
+
+<body>
+
+    {% block content %}
+
+        {% block banner %}
+        <!-- inner banner -->
+		<div class="inner_banner layer" id="home">
+			<div class="container">
+				<div class="agileinfo-inner">
+					<h2 class="text-center text-white">
+						signup page
+					</h2>
+				</div>
+			</div>
+		</div>
+        {% endblock banner %}
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12-md">
+                <form method='post' enctype="multipart/form-data">
+                    <div class='jumbotron'>
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class='btn btn-success' type="submit"  >Register here </button>
+
+                        {{ profile_form.as_p }}
+                        
+                    </div>
+                        <span>please <a href=" {% url 'login' %}">login </a> if you have an account </span>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+    {% include 'skillaqui/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,91 @@
+{% load static %}
+
+{% block header %}
+        <div class="container">
+            <!-- top header -->
+            <section class="row top_header pt-3">
+                <div class="col-lg-6">
+                </div>
+                    <div class="col-lg-6 buttons">
+                        <a  href=" {% url 'login' %}" class="btn btn-info btn-lg-block w3ls-btn px-4 text-capitalize mr-2" 
+                            aria-pressed="false" data-target="#exampleModal">
+                         Login 
+                        </a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'login' %}"  class="btn btn-info1 btn-lg-block w3ls-btn1 px-4 text-capitalize"
+                            aria-pressed="false" data-target="#exampleModal1">
+                            logout
+                            </a>
+                        {% else %}
+                            <a href=" {% url 'signup' %}"  class="btn btn-info1 btn-lg-block w3ls-btn1 px-4 text-capitalize"
+                            aria-pressed="false" data-target="#exampleModal1">
+                            register  
+                            </a>
+                        {% endif %}
+                        
+                    </div>
+                    {{ user }} |currently loggedIn
+            </section>
+            <!-- top header -->
+{% comment %} data-toggle="modal" {% endcomment %}
+            <!-- nav -->
+            <nav class="navbar navbar-expand-lg navbar-light py-sm-4 py-2">
+                <!-- logo -->
+                <h1>
+                    <a class="navbar-brand" href="{% url 'index' %}"></i>
+                        enlightenment platform
+                    </a>
+                </h1>
+                <!-- //logo -->
+                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- main nav -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-lg-auto text-center">
+                        <li class="nav-item active  mr-lg-3">
+                            <a class="nav-link" href=" {% url 'index' %} ">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mr-lg-3">
+                            <a class="nav-link" href=" {% url 'about' %} ">about</a>
+                        </li>
+                        <li class="nav-item mr-lg-3">
+                            <a class="nav-link" href=" {% url 'course' %} ">blog area</a>
+                            <li class="nav-item mr-lg-3">
+                        </li>
+                        {% if user.is_authenticated %}
+                            <a class="nav-link" href=" {% url 'videos' %} ">videos</a>
+                        {% else %}
+                            <span> <a class="nav-link" href= " {% url 'login' %} " >videos</a></span>
+                        {% endif %}
+                        </li>
+                        
+                        {% comment %} <li class="dropdown nav-item mr-lg-3">
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle ">
+                                Pages
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="nav-item">
+                                    <a href=" {% url 'course' %} " class="nav-link">courses</a>
+                                </li>
+                                <li class="nav-item">
+
+                                    
+                                </li>
+                            </ul>
+                        </li> {% endcomment %}
+                        {% comment %} <li class="nav-item mr-3">
+                            <a class="nav-link" href="{% url 'contact' %}">contact</a>
+                        </li> {% endcomment %}
+                            </div>
+                            
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+{% endblock header %}

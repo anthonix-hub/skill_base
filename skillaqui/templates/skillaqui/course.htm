@@ -1,0 +1,100 @@
+{% extends 'skillaqui/base.html' %}
+{% load static %}  
+
+ {% block content %}
+	{% block banner %}
+	<!-- inner banner -->
+		<div class="inner_banner layer" id="home">
+			<div class="container">
+				<div class="agileinfo-inner">
+					<h2 class="text-center text-white">
+						Course Page
+					</h2>
+				</div>
+			</div>
+		</div>
+		<!-- //inner banner -->
+	{% endblock banner %}
+    <!-- breadcrumbs -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% static 'index'%}">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Courses</li>
+        </ol>
+    </nav>
+    <!-- //breadcrumbs -->
+
+<!-- courses -->
+<section class="courses py-5">
+	<div class="container py-sm-3">
+		<h3 class="heading text-capitalize "> Popular courses</span> </h3>
+		<div class="row course-grids">
+
+			{% block db %}
+				{% for base in prod_details %}
+					<div class="col-lg-4 col-md-6 mt-5 ">
+						<!-- <div class="card"> -->
+							<img class="card-img-top" src="{{ base.cover_img.url }}" alt="Card image cap" style=' width:90% ;height:220px '>
+							<div class="card-body">
+								<i class="card-title">{{ base.timestamp |timesince }} ago </i>
+								<b class="card-title text-left ">{{ base.category }}</b>
+								<h4> {{ base.add_product }} </h4>
+								<p class="card-text mb-4"> {{ base.details |safe |slice:":120" }}  ... </p>
+
+								{% if user.is_authenticated %}
+									<a href=" {% url 'details' base.slug %} " >read more</a>
+								{% else %}
+									<a class='btn btn-primary' href=" {% url 'login' %} " > read more </a>
+								{% endif %}
+							</div>
+						<!-- </div>	 -->
+					</div>
+				{% endfor %} 
+			{% endblock %}
+		</div>
+
+	</div>
+</section>
+<section class="courses py-5">
+	<div class="container py-sm-3">
+		<div class="jumbotron">
+			<h3 class="heading text-capitalize mb-lg-3 mb-2"> latest courses</span> </h3>
+		</div>
+		<div class="row course-grids">
+			
+		{% for obj in latest %}
+				<div class="col-lg-4 col-md-6 mt-5">
+						<!-- <div class="card"> -->
+						<img class="card-img-top" src="{{ obj.cover_img.url }}" alt="Card image cap" >
+							<div class="card-body">
+								<i class="card-title">{{ obj.timestamp | timesince }} ago </i>
+								<b class="card-title text-left ">{{ base.category }}</b>
+								<h4> {{ obj.add_product }} </h4>
+								<p class="card-text mb-3"> {{ obj.details|slice:":150" |safe }}  ... </p>
+
+								{% if user.is_authenticated %}
+									<a href=" {% url 'details' obj.slug %} " >read more</a>
+								{% else %}
+									<a class='btn btn-primary' href=" {% url 'login' %} " > read more </a>
+								{% endif %}
+							</div>
+						<!-- </div>	 -->
+				</div>
+		{% endfor %} 
+		
+		</div>
+	
+
+	</div>
+</section>
+<!-- courses -->
+
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<!-- //js -->	
+ 
+ {% endblock content %}
+

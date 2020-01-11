@@ -1,0 +1,77 @@
+{% load static %}
+
+<head> 
+<title>Presentation and enlightenment Website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        
+        <script type="application/x-javascript">
+            addEventListener("load", function () {
+                setTimeout(hideURLbar, 0);
+            }, false);
+
+            function hideURLbar() {
+                window.scrollTo(0, 1);
+            }
+        </script>
+    
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %} ">
+        <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css" media="all" />
+        <link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %} "> 
+        <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %} "> 
+        <link rel="stylesheet" href="{% static 'css/brands.css' %} "> 
+        <link rel="stylesheet" href="{% static 'css/solid.css' %} "> 
+        {% comment %} <link rel="stylesheet" href="{% static 'css/jquery.countdown.css' %} " /> {% endcomment %}
+        <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+
+
+    {% block script %}
+                        
+            <!-- search-bar -->
+            <script src="{% static 'js/main.js' %} "></script>
+            <!-- //search-bar -->
+            
+            <!-- Countdown-Timer-JavaScript -->
+            <script src="{% static 'js/simplyCountdown.js' %} "></script>
+            <!-- easy to customize -->
+            <script>
+                $('#simply-countdown-losange').simplyCountdown({
+                    year: 2020,
+                    month: 1,
+                    day: 06
+                });
+            </script>
+            <!-- //Countdown-Timer-JavaScript -->
+            
+            <!-- start-smoth-scrolling -->
+            <script src=" {% static 'js/SmoothScroll.min.js' %} "></script>
+            <script type="text/javascript" src="{% static 'js/move-top.js' %} "></script>
+            <script type="text/javascript" src="{% static 'js/easing.js' %} "></script>
+            <script type="text/javascript">
+                jQuery(document).ready(function($) {
+                    $(".scroll").click(function(event){		
+                        event.preventDefault();
+                        $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                    });
+                });
+            </script>
+            <!-- here stars scrolling icon -->
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    /*
+                        var defaults = {
+                        containerID: 'toTop', // fading element id
+                        containerHoverID: 'toTopHover', // fading element hover id
+                        scrollSpeed: 1200,
+                        easingType: 'linear' 
+                        };
+                    */
+                                        
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                                        
+                    });
+        </script>
+    {% endblock script %}
+
+</head>

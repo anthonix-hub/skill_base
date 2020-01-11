@@ -1,0 +1,35 @@
+{% extends 'skillaqui/course.htm' %}
+<body>
+{% block content %}
+<!-- inner banner -->
+	{% block banner %}
+    <div class="inner_banner layer" id="home">
+        <div class="container">
+            <div class="agileinfo-inner">
+                <h2 class="text-center text-white">
+                    videos 
+                </h2>
+            </div>
+        </div>
+    </div>
+    <!-- //inner banner -->
+	{% endblock banner %}
+
+	<div class="container py-sm-3">
+        <h3 class="heading text-capitalize mb-lg-5 mb-4"> video demonstrations</span> </h3>
+        <div class="row course-grids">
+        {% for vids in prod_details %}
+            <div class="col-lg-4 col-md-8 mt-5">
+                <div class="card" >
+                {% comment %} <div class='' type='video/mp4' src=" {{ vids.video.url }}"></div> {% endcomment %}
+                    <video type='video/mp4' src=" {{ vids.video.url }} " style=' width:100% ;height:60% ' > </video>
+                    <h5 class="card-title">{{ vids.add_product }}</h5>
+
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+
+{% endblock content %}

@@ -1,0 +1,101 @@
+{% extends 'skillaqui/course.htm' %}
+
+{% load static %}
+{% load comments %}
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	{% block content %}
+		{% block banner %}
+			<div class="inner_banner layer" id="home">
+				<div class="container">
+					<div class="agileinfo-inner">
+						<h2 class="text-center text-white">
+							{{ prod_details.category }}
+						</h2>
+					</div>
+				</div>
+			</div>
+		{% endblock banner %}
+		
+		{% block dd %}
+		<section class="courses py-5">
+			<div class="container py-sm-3">
+				<h3 class="heading text-capitalize mb-lg-5 mb-4 txt-right "> {{ prod_details.add_product }} </span> </h3>
+				<div class="row course-grids">
+
+					<div class="col-lg-9">
+						<div class="card" style='width:70% border:None '>
+							<img class=" card-img-top" src="{{ prod_details.cover_img.url }}" alt="Card image cap" style=" height:20% " >
+							<div class="card-body">
+								<div class="card-title">
+									<span>{{ prod_details.timestamp | timesince }} ago| </span>
+									<b class='text-right'>{{ prod_details.category }}</b>
+								</div>
+								{% comment %} <h5 class="card-title text-right ">{{ prod_details.category }}</h5> {% endcomment %}
+								<p class="card-text mb-3"> {{ prod_details.details|safe }}</p>
+								{% comment %} <p>  <a href=" "  class="btn btn-primary">{{ prod_details.videos }}</a></p> {% endcomment %}
+								<p class='text-right' > watch our tutorial videos for demonstrations <a href=" {% url 'videos' %}" >|video</a><p>								
+							</div>
+						</div>
+					</div>			
+					<div class=" col-md-3" >
+							<div class="card">
+								  <div class="card-body text-white bg-primary ">
+									<h4 class="card-title">Latest Posts</h4>
+								  </div>
+								{% for obj in latest %}
+									<h5> {{ obj.add_product }} </h5>
+									<b class="card-text ">{{ base.category }}</b>
+									<p class="card-text">{{ obj.timestamp | timesince }} ago </p>
+								{% endfor %} 
+							</div>	
+
+						<div class='container' >
+							<div>
+								{% for cat in prod %}
+									<p class='text-left'>{{ cat.category }}</p>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<section>
+			<form method='POST' action='.' class='commenting-form' >
+				{% csrf_token %}
+				<div class='jumbotron' >
+					{{ commentform.as_p }}
+					<button type="submit" class="btn btn-primary">Submit</button>				
+				</div>
+			</form>
+
+		</section>
+			{% for site_comment in page_comments %}
+				{% for data in site_comment.comments.all %}
+				<li>{{data.name}}| {{ data.content |safe }}</li>
+
+				{% endfor %}
+			{% endfor %}
+
+
+		{% endblock dd %}
+	{% endblock content %}
+
+	<script>
+	.detail_id{
+		width:20% ;
+		height:50% 
+	}
+	
+	</script>
+
+
+	
+
+
+
+</body>
+</html>

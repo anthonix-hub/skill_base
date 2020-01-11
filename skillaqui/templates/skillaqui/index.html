@@ -1,0 +1,170 @@
+{% extends 'skillaqui/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+{% block content %}
+
+{% block banner %}
+    <section class="banner layer" id="home">
+        <div class="container">
+            <div class="banner-text">
+                <div class="slider-info mb-4">
+                    <div class="agileinfo-logo">
+                        <h3>
+                            Practice makes you better
+                        </h3>
+                    </div>
+                    <h3 class="txt-w3_agile mb-3"> Its time to master your skills</h3>
+                    <a href="{% url 'course' %}" class="mr-2 btn-success "><i class="fa fa-graduation-cap"></i> Our Courses</a>
+                    <a href="{% url 'about' %}"><i class="fas fa-book"></i> Read More</a>
+                </div>
+                <!-- To bottom button-->
+                <div class="thim-click-to-bottom">
+                    <div class="rotate">
+                        <a href="#welcome" class="scroll">
+                            <i class="fa fa-angle-double-down"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- //To bottom button-->
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+
+<section class="welcome py-5" id="welcome">
+	<div class="container py-sm-3">
+		<h3 class="heading text-capitalize mb-lg-5 mb-4"> Welcome - <span>Few Words About Us</span> </h3>
+		<div class="row welcome-grids">
+			<div class="col-lg-4 mb-lg-0 mb-5">
+				<h4>learn a skill today</h4>
+				<p class="mb-3">this platform provides you with the enlightenment about how to perform some useful tasks  </p>
+				<p> <i class="<i class="fas fa-address-book" aria-hidden="true"></i> some of our Features includes</p>
+				<p> <i class="fas mr-2 fa-hand-point-right"></i> making perfumes</p>
+				<p> <i class="fas mr-2 fa-hand-point-right"></i> making cakes of all types </p>
+				<p> <i class="fas mr-2 fa-hand-point-right"></i> detergent making</p>
+				<p> <i class="fas mr-2 fa-hand-point-right"></i> and many more</p>
+				<div class="welcome-button mt-4">
+					<a href="{% url 'about' %}">Read More</a>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<div class="image1 mb-4">
+				<h4>Explore some of our instructional videos</h4>
+					<p class="mt-3"> rich array of instructional videos for you to follow and feel free to creat any of the items at your convenience </P>
+					<span class="fa fa-cog" aria-hidden="true"></span>
+				</div>
+				{% comment %} <div class="image1 pt-0">
+				<h4>Success your Future</h4>
+					<p class="mt-3">Sed gravida dignissim magna idesn en molestie. Nulla congue, ex init dictu lacinia, Maecenas sem nulla</P>
+					<span class="fas fa-graduation-cap"></span>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 mt-md-0 mt-4">
+				<div class="image1 mb-4">
+				<h4>Great Confidence </h4>
+					<p class="mt-3">Sed gravida dignissim magna idesn en molestie. Nulla congue, ex init dictu lacinia, Maecenas sem nulla</P>
+					<span class="fab fa-accusoft"></span>
+				</div>
+				<div class="image1 pt-0">
+				<h4>Finalize your skill</h4>
+					<p class="mt-3">Sed gravida dignissim magna idesn en molestie. Nulla congue, ex init dictu lacinia, Maecenas sem nulla</P>
+					<span class="fab fa-skyatlas"></span> {% endcomment %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- welcome -->
+
+<!-- welcome bottom -->
+<section class="welcome-bottom">
+	<div class="image-layer py-5">
+		<div class="container py-sm-3">
+		<h3 class="heading text-capitalize mb-lg-5 mb-4"> Main Features And Benifits</span> </h3>
+		<div class="row bottom-grids">
+			<div class="row col-lg-4 mb-lg-0 mb-5">
+				<div class="col-lg-3 col-2">
+					<i class="fab fa-studiovinari"></i>
+				</div>
+				<div class="col-lg-9 col-10">
+					<h4>well understood writing</h4>
+					<p>Our articles are written by for users to follow and understand.</p>
+				</div>
+			</div>
+			<div class="row col-lg-4 mb-lg-0 mb-5">
+				<div class="col-lg-3 col-2">
+					<i class="fas fa-book"></i>
+				</div>
+				<div class="col-lg-9 col-10">
+					<h4>rich array of video Library</h4>
+					<p>you will find a well up to date array of video for every article uploaded.</p>
+				</div>
+			</div>
+			<div class="row col-lg-4">
+				<div class="col-lg-3 col-2">
+					<i class="fab fa-firstdraft"></i>
+				</div>
+				<div class="col-lg-9 col-10">
+					<h4>easy to navigate through our site</h4>
+					<p>user will find the site very easy to navigate and find their way through.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //welcome bottom -->
+
+<!-- services -->
+<section class="services py-5">
+	<div class="container py-sm-3">
+		<h3 class="heading text-capitalize mb-lg-5 mb-4"> Services - <span>What We Offer</span> </h3>
+		<div class="row service-grids">
+			<div class="col-lg-4 col-md-6">
+				<div class="service-grid1">
+					<i class="fas fa-globe"></i>
+					<h5>1</h5>
+					<h4 class="mb-3">Free Online Courses</h4>
+					<p>this platform offers user with free presentation content on vocational skills .</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+				<div class="service-grid1">
+					<i class="fas fa-book"></i>
+					<h5>2</h5>
+					<h4 class="mb-3"> Quality videos </h4>
+					<p>we have full stock of videos for every presentation post.</p>				
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
+				<div class="service-grid1">
+					<i class="fab fa-digital-ocean"></i>
+					<h5>3</h5>
+					<h4 class="mb-3">Unlimited Courses</h4>
+					<p>Details exaplanation on how stuff can be made .</p>
+				</div>
+			</div>
+			<div class="ser-button mt-4">
+				<a href="{% url 'course' %}">Explore all our Courses
+	</div>
+</section>
+<!-- //services -->
+
+<!-- footer -->	
+{% comment %} {% include 'skillaqui/footer.html' %} {% endcomment %}
+<!-- footer -->
+	<!-- js -->
+        <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+{% endblock %}
+
+</body>
+</html>

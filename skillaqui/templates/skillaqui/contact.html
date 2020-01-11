@@ -1,0 +1,235 @@
+{% extends 'skillaqui/base.html' %}
+
+{% load static %}
+
+	{% block content %}
+ <!-- inner banner -->
+	{% block banner %}
+    <div class="inner_banner layer" id="home">
+        <div class="container">
+            <div class="agileinfo-inner">
+                <h2 class="text-center text-white">
+                    Contact Page
+                </h2>
+            </div>
+        </div>
+    </div>
+    <!-- //inner banner -->
+	{% endblock banner %}
+
+    <!-- breadcrumbs -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+        </ol>
+    </nav>
+    <!-- //breadcrumbs -->
+
+<!-- contact -->
+<section class="contact py-5">
+	<div class="container py-sm-3">
+		<h3 class="heading text-capitalize mb-lg-5 mb-4"> Contact Us - <span>Get In Touch</span> </h3>
+		<div class="address row">
+			<div class="col-md-4 address-grid">
+				<div class="address-info">
+					<div class="address-left text-center">
+						<i class="far fa-map"></i>
+					</div>
+					<div class="address-right text-center">
+						<h6 class="ad-info text-uppercase mb-2">Address</h6>
+						<p> 2466H 5th Street Parking, King Block, New York City.
+
+						</p>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-md-4 address-grid">
+				<div class="address-info">
+					<div class="address-left text-center">
+						<i class="far fa-envelope"></i>
+					</div>
+					<div class="address-right text-center">
+						<h6 class="ad-info text-uppercase mb-2">Email</h6>
+							<a href="mailto:example@email.com"> mail@example.com</a>
+							<a href="mailto:example@email.com"> mail@example.com</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-4 address-grid">
+				<div class="address-info">
+					<div class="address-left text-center">
+						<i class="fa fa-mobile-alt"></i>
+					</div>
+					<div class="address-right text-center">
+						<h6 class="ad-info text-uppercase mb-2">Phone</h6>
+						<p>+1 234 567 8901</p>
+						<p>+1 234 567 8901</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form row py-5">
+			<div class="col-lg-6 contact-form">
+				<form action="#" method="post">
+					<div class="fields-grid">
+						<div class="styled-input agile-styled-input-top">
+							<input type="text" name="First name" required=""> 
+							<label>Full Name</label>
+							<span></span>
+						</div> 
+						<div class="styled-input">
+							<input type="email" name="Email" required="">
+							<label>Email Address</label>
+							<span></span>
+						</div>
+						<div class="styled-input">
+							<input type="tel" name="Phone" required="">
+							<label>Phone Number</label>
+							<span></span>
+						</div>
+						<div class="styled-input mt-5">
+							<textarea></textarea>
+							<label class="text">Your Message</label>
+							<span></span>
+						</div>
+					</div>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+			<div class="col-lg-6 mt-lg-0 mt-5">
+				<div class="bg-img">
+					<div class="contact-layer">
+						<h3 class="mb-3">Dont hesitate to contact us for any kind of information</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	
+	</div>
+</section>	
+<!-- //contact -->
+		
+<!-- footer -->	
+<!-- Login modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-uppercase" id="exampleModalLabel1">Login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" method="post" class="p-3">
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">User Name</label>
+							<input type="email" class="form-control" placeholder="User Name" name="Name" id="recipient-name" required="">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name1" class="col-form-label">Password</label>
+							<input type="password" class="form-control" placeholder="Password" name="Name" id="recipient-name1" required="">
+						</div>
+						<div class="right-w3l mt-4 mb-3">
+							<input type="submit" class="form-control" value="Login">
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //Login modal -->
+
+	<!-- Register modal -->
+	<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-uppercase" id="exampleModalLabel1">Register Here</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" method="post" class="p-3">
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">First Name</label>
+							<input type="text" class="form-control" placeholder="First Name" name="Name" id="recipient-name2" required="">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Last Name</label>
+							<input type="text" class="form-control" placeholder="Last Name" name="Name" id="recipient-name3" required="">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Email id</label>
+							<input type="email" class="form-control" placeholder="Email id" name="Name" id="recipient-name4" required="">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Mobile Number</label>
+							<input type="text" class="form-control" placeholder="Mobile Number" name="Name" id="recipient-name5" required="">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name1" class="col-form-label">Password</label>
+							<input type="password" class="form-control" placeholder="Password" name="Name" id="recipient-name6" required="">
+						</div>
+						<div class="right-w3l mt-4 mb-3">
+							<input type="submit" class="form-control" value="Create account">
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //Register modal -->
+
+
+	<!-- js -->
+	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<!-- //js -->	
+	
+	<!-- search-bar -->
+	<script src="{% static 'js/main.js' %} "></script>
+	<!-- //search-bar -->
+	
+	<!-- start-smoth-scrolling -->
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+	{% endblock content %}
+
